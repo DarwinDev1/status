@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  monitor:
+    build: .
+    container_name: monitor_fastapi
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      - ./frontend:/app/frontend
