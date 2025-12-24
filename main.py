@@ -1,7 +1,7 @@
 import psutil
 #¿Cuánto vale 1 gb a un byte?
 giga = 1024 ** 3 #bytes
-
+#aojs
 #cpu
 def cpu():
     cpu = psutil.cpu_percent(interval=1) #Muestra el promedio global de el uso de CPU (Como lo que se muestra en el admin)
