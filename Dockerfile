@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Instalamos dependencias
-RUN pip install --no-cache-dir fastapi uvicorn psutil
+RUN pip install --no-cache-dir fastapi uvicorn[standard] psutil
 
 # Exponemos puerto
 EXPOSE 8000

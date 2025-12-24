@@ -25,5 +25,9 @@ async def status_ws(websocket: WebSocket):
         await websocket.close()
 
 
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+from fastapi.responses import FileResponse
 
-app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+@app.get("/")
+def index():
+    return FileResponse("frontend/index.html")
