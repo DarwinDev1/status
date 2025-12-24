@@ -1,5 +1,4 @@
-const ws = new WebSocket(`ws://${location.hostname}:8000/ws/status`);
-
+const ws = new WebSocket(`ws://${location.host}/ws/status`);
 
 ws.onmessage = (event) => {
   const data = JSON.parse(event.data);

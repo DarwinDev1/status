@@ -9,27 +9,6 @@
   <div id="ram">RAM: ...</div>
   <div id="disco">Disco: ...</div>
 
-  <script>
-    const ws = new WebSocket("ws://127.0.0.1:8000/ws/status");
-
-    ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-
-      // CPU
-      document.getElementById("cpu").innerText =
-        `CPU global: ${data.cpu.uso_global}% | Núcleos: ${data.cpu.uso_nucleos.join(", ")}%`;
-
-      // RAM
-      document.getElementById("ram").innerText =
-        `RAM usada: ${data.ram.usada} / ${data.ram.total} (${data.ram.porcentaje}%)`;
-
-      // Disco
-      document.getElementById("disco").innerText =
-        `Disco usado: ${data.disco.usado} / ${data.disco.total} (${data.disco.porcentaje}%)`;
-    };
-
-    ws.onclose = () => console.log("Conexión cerrada");
-    ws.onerror = (e) => console.error("Error WebSocket", e);
-  </script>
+  <script src="./index.js"></script>
 </body>
 </html>
