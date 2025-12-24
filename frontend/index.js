@@ -9,11 +9,11 @@ ws.onmessage = (event) => {
 
   // RAM
   document.getElementById("ram").innerText =
-    `RAM: ${data.ram.usado.toFixed(1)} / ${data.ram.total.toFixed(1)} GB (${data.ram.porcentaje}%)`;
+    `RAM: ${data.ram.usada} / ${data.ram.total} GB (${data.ram.porcentaje}%)`;
 
   // Disco
   document.getElementById("disco").innerText =
-    `Disco: ${data.disco.usada.toFixed(1)} / ${data.disco.total.toFixed(1)} GB (${data.disco.porcentaje}%)`;
+    `Disco: ${data.disco.usado} / ${data.disco.total} GB (${data.disco.porcentaje}%)`;
 };
 
 ws.onclose = () => console.log("WebSocket cerrado");
